@@ -8,12 +8,11 @@ const {
 } = require("../../utils/validator.util");
 
 const userSchema = new mongoose.Schema({
-  
 
   
   name: {
     type: String,
-    requiered: true
+    required: true
   },
 
   phoneNumber: {
@@ -42,8 +41,15 @@ const userSchema = new mongoose.Schema({
    sosContact: {
    type: mongoose.Schema.Types.ObjectId,
    ref: "SosContact",
-   required: true
+   required: false
   },
+   
+  allergy: {
+   type: mongoose.Schema.Types.ObjectId,
+   ref: "Allergy",
+   required: false
+     
+   }
 
 
 });

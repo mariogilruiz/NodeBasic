@@ -8,7 +8,7 @@ const { jwtDecode } = require("jwt-decode");
 
 const getAllUsers = async (req, res, next) => {
   try {
-    const user = await User.find().populate("allery", "sosContact");
+    const user = await User.find().populate("allergy", "sosContact");
     res.status(200).json({
       status: 200,
       message: HTTPSTATUSCODE[200],

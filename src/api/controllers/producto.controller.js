@@ -3,11 +3,12 @@ const { HTTPSTATUSCODE } = require("../../utils/httpStatusCode");Producto
 const createProducto = async (req, res, next) => {
   try {
     
-    const { categoria, precio } = req.body;
+    const { name, ingredients, allergy } = req.body;
     const coverImage = req.file ? req.file.path : "";
     const producto = await Producto.create({
-      categoria,
-      precio,
+      name,
+      ingredients,
+      allergy,
       coverImage
     });
     res.status(201).json({
@@ -22,7 +23,7 @@ const createProducto = async (req, res, next) => {
 
 const getAllProductos = async (req, res, next) => {
   try {
-    const productos = await Producto.find();
+    const productos = await Producto.find().populate("allergy");
     res.status(200).json({
       status: 200,
       message: HTTPSTATUSCODE[200],

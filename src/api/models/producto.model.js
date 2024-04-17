@@ -5,11 +5,6 @@ const productoSchema = new mongoose.Schema({
   
   name: {
     type: String,
-    required: true,
-  },
-
-  coverImage: {
-    type: String,
     required: false,
   },
 
@@ -20,8 +15,13 @@ const productoSchema = new mongoose.Schema({
   },
 
   allergy: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: [mongoose.Schema.Types.ObjectId],
     ref: "Allergy",
+  },
+
+   coverImage: {
+    type: String,
+    required: false,
   },
 });
 

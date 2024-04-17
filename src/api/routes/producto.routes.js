@@ -15,7 +15,7 @@ const {
 const { isAuth } = require("../middlewares/auth.middleware");
 
 // Ruta para crear un nuevo álbum
-productoRouter.post("/", [isAuth], createProducto);
+productoRouter.post("/", createProducto);
 productoRouter.get("/", getAllProductos);
 productoRouter.get("/:id", getProductoById);
 productoRouter.put("/:id", updateProducto);
