@@ -37,7 +37,7 @@ const getAllProductos = async (req, res, next) => {
 
 const getProductoById = async (req, res, next) => {
   try {
-    const producto = await Producto.findById(req.params.id);
+    const producto = await Producto.findById(req.params.id).populate("allergy");
     if (producto) {
       res.status(200).json({
         status: 200,

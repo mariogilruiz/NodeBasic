@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
   },
    
   allergy: {
-   type: mongoose.Schema.Types.ObjectId,
+   type: [mongoose.Schema.Types.ObjectId],
    ref: "Allergy",
    required: false
      

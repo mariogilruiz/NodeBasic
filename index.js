@@ -65,6 +65,7 @@ app.use("/allergy", allergyRouter);
 app.use("/sosContact", sosContactRouter);
 
 
+
 // 4. MANEJO DE ERRORES -> instanciamos las funciones de error.middleware
 app.use(notFoundHandler);
 app.use(errorHandler);
