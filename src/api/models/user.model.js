@@ -8,9 +8,44 @@ const {
 } = require("../../utils/validator.util");
 
 const userSchema = new mongoose.Schema({
-  email: { type: String, trim: true, required: true },
-  password: { type: String, trim: true, required: true },
-  role: { type: String, trim: true, default: "user", required: true },
+  
+
+  
+  name: {
+    type: String,
+    requiered: true
+  },
+
+  phoneNumber: {
+    type: Number,
+  },
+
+  email:
+  {
+    type: String,
+    trim: true,
+    required: true
+  },
+
+  coverImage: {
+    type: String,
+    required: false,
+  }, 
+
+  password:
+  {
+    type: String,
+    trim: true,
+    required: true
+  },
+
+   sosContact: {
+   type: mongoose.Schema.Types.ObjectId,
+   ref: "SosContact",
+   required: true
+  },
+
+
 });
 
 userSchema.pre("save", function (next) {

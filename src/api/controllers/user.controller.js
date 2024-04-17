@@ -8,11 +8,11 @@ const { jwtDecode } = require("jwt-decode");
 
 const getAllUsers = async (req, res, next) => {
   try {
-    const productos = await User.find();
+    const user = await User.find().populate("allery", "sosContact");
     res.status(200).json({
       status: 200,
       message: HTTPSTATUSCODE[200],
-      data: productos,
+      data: user,
     });
   } catch (error) {
     next(error);
@@ -22,12 +22,12 @@ const getAllUsers = async (req, res, next) => {
 
 const getUserById = async (req, res, next) => {
   try {
-    const producto = await User.findById(req.params.id);
-    if (producto) {
+    const user = await User.findById(req.params.id);
+    if (user) {
       res.status(200).json({
         status: 200,
         message: HTTPSTATUSCODE[200],
-        data: producto,
+        data: user,
       });
     } else {
       res.status(404).json({

@@ -3,21 +3,25 @@ const mongoose = require("mongoose");
 // Definición del esquema del Producto
 const productoSchema = new mongoose.Schema({
   
-  categoria: {
+  name: {
     type: String,
-    required: false,
+    required: true,
   },
-  precio: {
-    type: Number,
-    required: false,
-  },
+
   coverImage: {
     type: String,
     required: false,
   },
-  proveedor: {
+
+  ingredients: {
+    type: [String],
+    required: false,
+
+  },
+
+  allergy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Proveedor",
+    ref: "Allergy",
   },
 });
 

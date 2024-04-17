@@ -10,14 +10,15 @@ const { connectMongo } = require("./src/data/mongo");
 //const { configCloudinary } = require("./src/utils/cloudinary/config");
 // 1.3 las rutas:
 const userRouter = require("./src/api/routes/user.routes");
-const clienteRouter = require("./src/api/routes/cliente.routes");
 const productoRouter = require("./src/api/routes/producto.routes");
-const proveedorRouter = require("./src/api/routes/proveedor.routes");
-const ventasRouter = require("./src/api/routes/ventas.routes");
+const sosContactRouter = require("./src/api/routes/sosContact.routes");
+const allergyRouter = require("./src/api/routes/allergy.routes");
+
 const {
   notFoundHandler,
   errorHandler,
 } = require("./src/api/middlewares/error.middleware");
+
 
 // 2. CONFIG
 // 2.1 configuración de la app
@@ -60,9 +61,9 @@ app.get("/", (req, res) => {
 // 3.2 las rutas de mis datos
 app.use("/user", userRouter);
 app.use("/producto", productoRouter);
-app.use("/cliente", clienteRouter);
-app.use("/proveedor", proveedorRouter);
-app.use("/ventas", ventasRouter);
+app.use("/allergy", allergyRouter);
+app.use("/sosContact", sosContactRouter);
+
 
 // 4. MANEJO DE ERRORES -> instanciamos las funciones de error.middleware
 app.use(notFoundHandler);
