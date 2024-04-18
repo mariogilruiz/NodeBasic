@@ -12,7 +12,7 @@ const { isAuth } = require("../middlewares/auth.middleware");
 
 userRouter.post("/register", register);
 userRouter.post("/login", login);
-userRouter.post("/logout", [isAuth], logout);
+userRouter.post("/logout", logout);
 userRouter.post("/isadmin", [isAuth], isAdmin);
 userRouter.get("/", getAllUsers);
 userRouter.get("/:id", getUserById);
