@@ -43,13 +43,10 @@ app.use(cors()); // no hay restricciones
  * permitimos peticiones de esas dos direcciones IP
  * Este concepto se conoce como whitelisting
  */
-/* app.use(cors({
-  origin: [
-    '0.0.0.0',
-    'http://localhost:4200'
-  ],
+app.use(cors({
+  origin: "*",
   credentials: true,
-})); */
+}))
 app.use(logger("dev"));
 
 // 3. ENDPOINTS
