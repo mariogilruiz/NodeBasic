@@ -7,7 +7,7 @@ const { createSosContact,
     deleteSosContact, } = require("../controllers/sosContact.controller");
 
 // Ruta para crear un nuevo álbum
-sosContactRouter.post("/create", createSosContact);
+sosContactRouter.post("/register", createSosContact);
 sosContactRouter.get("/", getAllSosContact);
 sosContactRouter.get("/:id", getSosContactById);
 sosContactRouter.put("/:id", updateSosContact);
