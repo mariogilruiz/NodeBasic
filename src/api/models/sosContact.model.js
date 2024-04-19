@@ -17,12 +17,12 @@ const sosContactSchema = new mongoose.Schema({
     required: false,
   },
 
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: false
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  //   required: false
 
-  }
+  // }
 
 });
 
