@@ -5,6 +5,12 @@ const allergySchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+
+  image: {
+    type: String,
+    required: false,
+  }
+
 });
 
 const Allergy = mongoose.model("Allergy", allergySchema);

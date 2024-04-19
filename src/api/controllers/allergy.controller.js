@@ -3,9 +3,11 @@ const { HTTPSTATUSCODE } = require("../../utils/httpStatusCode");
 
 const createAllergy = async (req, res, next) => {
   try {
-    const allergy = await Allergy.create(req.body);
+    const { name } = req.body
+    const image = req.file?req.file.path:""// una ternaria para saber si nos han enviado el archivo
+    const allergy = await Allergy.create({name, image});
     res.status(201).json({
-      status: 201,
+      status: 201,s
       message: HTTPSTATUSCODE[201],
       data: allergy,
     });
