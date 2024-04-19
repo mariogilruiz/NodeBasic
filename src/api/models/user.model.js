@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
   },
 
   sosContact: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: [mongoose.Schema.Types.ObjectId],
     ref: "SosContact",
     required: true
   },
