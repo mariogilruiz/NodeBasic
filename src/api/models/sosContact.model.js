@@ -11,19 +11,18 @@ const sosContactSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
- 
+
   email: {
     type: String,
     required: false,
   },
 
-  user: {
-   type: mongoose.Schema.Types.ObjectId,
-   ref: "User",
-   required: false
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  //   required: false
 
-  }
-
+  // }
 
 });
 

@@ -9,7 +9,7 @@ const {
 
 const userSchema = new mongoose.Schema({
 
-  
+
   name: {
     type: String,
     required: true
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   coverImage: {
     type: String,
     required: false,
-  }, 
+  },
 
   password:
   {
@@ -38,18 +38,18 @@ const userSchema = new mongoose.Schema({
     required: true
   },
 
-   sosContact: {
-   type: mongoose.Schema.Types.ObjectId,
-   ref: "SosContact",
-   required: false
+  sosContact: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SosContact",
+    required: false
   },
-   
+
   allergy: {
-   type: [mongoose.Schema.Types.ObjectId],
-   ref: "Allergy",
-   required: false
-     
-   }
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Allergy",
+    required: false
+
+  }
 
 
 });
