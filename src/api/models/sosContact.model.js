@@ -4,23 +4,23 @@ const mongoose = require("mongoose");
 const sosContactSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: false,
   },
 
   numberPhone: {
     type: Number,
-    required: true,
+    required: false,
   },
  
   email: {
     type: String,
-    required: true,
+    required: false,
   },
 
   user: {
    type: mongoose.Schema.Types.ObjectId,
    ref: "User",
-   required: true
+   required: false
 
   }
 
