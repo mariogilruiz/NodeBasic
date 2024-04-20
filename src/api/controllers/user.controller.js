@@ -53,7 +53,7 @@ const register = async (req, res, next) => {
     const userDB = await user.save();
     return res.status(201).json({
       status: 201,
-      message: `User ${userDB.email} created User ${userDB._id}`
+      message: `User Email ${userDB.email} created User ${userDB._id}`
     });
   } catch (error) {
     return next(error);
