@@ -44,7 +44,7 @@ const getUserById = async (req, res, next) => {
 
 const register = async (req, res, next) => {
   try {
-    const user = new User(req.body);
+    const user = new User.create(req.body);
 
     const userExist = await User.findOne({ email: user.email });
     if (userExist) {
