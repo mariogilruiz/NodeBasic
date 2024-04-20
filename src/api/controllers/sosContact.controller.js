@@ -19,7 +19,8 @@ const createSosContact = async (req, res, next) => {
 
 const getAllSosContact = async (req, res, next) => {
   try {
-    const sosContact = await SosContact.find().populate("user");
+    const sosContact = await SosContact.find()
+    //.populate("user");
     console.log(sosContact)
     res.status(200).json({
       status: 200,
