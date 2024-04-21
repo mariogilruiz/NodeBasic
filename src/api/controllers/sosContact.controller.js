@@ -35,7 +35,7 @@ const getAllSosContact = async (req, res, next) => {
 const getSosContactById = async (req, res, next) => {
   try {
     const sosContact = await SosContact.findById(req.params.id);
-    if (user) {
+    if (sosContact) {
       res.status(200).json({
         status: 200,
         message: HTTPSTATUSCODE[200],
